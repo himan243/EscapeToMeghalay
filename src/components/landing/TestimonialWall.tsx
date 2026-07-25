@@ -100,21 +100,21 @@ export function TestimonialWall() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', height: '100%', padding: '20px' }}>
             {/* Column 1 – scrolls up */}
             <div style={{ overflow: 'hidden' }}>
-              <div style={{ animation: `marqueeUp 30s linear infinite`, animationPlayState: isPaused ? 'paused' : 'running' }}>
+              <div className="testimonial-marquee-up" style={{ animationPlayState: isPaused ? 'paused' : 'running' }}>
                 {repeat(col1).map((t, i) => <TestimonialCard key={`c1-${i}`} t={t} />)}
               </div>
             </div>
 
             {/* Column 2 – scrolls down */}
             <div style={{ overflow: 'hidden' }}>
-              <div style={{ animation: `marqueeDown 35s linear infinite`, animationPlayState: isPaused ? 'paused' : 'running' }}>
+              <div className="testimonial-marquee-down" style={{ animationPlayState: isPaused ? 'paused' : 'running' }}>
                 {repeat(col2).map((t, i) => <TestimonialCard key={`c2-${i}`} t={t} />)}
               </div>
             </div>
 
             {/* Column 3 – scrolls up slower */}
             <div style={{ overflow: 'hidden' }}>
-              <div style={{ animation: `marqueeUp 40s linear infinite`, animationPlayState: isPaused ? 'paused' : 'running' }}>
+              <div className="testimonial-marquee-up-slow" style={{ animationPlayState: isPaused ? 'paused' : 'running' }}>
                 {repeat(col3).map((t, i) => <TestimonialCard key={`c3-${i}`} t={t} />)}
               </div>
             </div>

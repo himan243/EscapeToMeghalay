@@ -175,3 +175,28 @@ body {
   animation: rainDrop var(--duration, 1.5s) linear infinite;
   animation-delay: var(--delay, 0s);
 }
+
+@keyframes testimonialMarqueeUp {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, -50%, 0); }
+}
+
+@keyframes testimonialMarqueeDown {
+  0% { transform: translate3d(0, -50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.testimonial-marquee-up {
+  animation: testimonialMarqueeUp 30s linear infinite;
+  will-change: transform;
+}
+
+.testimonial-marquee-down {
+  animation: testimonialMarqueeDown 35s linear infinite;
+  will-change: transform;
+}
+
+.testimonial-marquee-up-slow {
+  animation: testimonialMarqueeUp 40s linear infinite;
+  will-change: transform;
+}

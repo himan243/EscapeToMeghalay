@@ -1,8 +1,10 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ShieldCheck, MapPin, HeartHandshake, Footprints, Sparkles, Sliders, CalendarCheck, Users } from 'lucide-react';
+import janailarFalls from '../../../janailar-falls.avif';
 
 const values = [
   { icon: MapPin, title: 'Local Khasi Experts', description: 'Born and raised in these valleys, our guides share stories, dialects, and secret vistas passed down through generations.', accent: '#10B981' },
@@ -17,7 +19,24 @@ const values = [
 
 export function ValueProps() {
   return (
-    <section id="why-us" style={{ padding: '100px 0', background: 'linear-gradient(180deg, #03130C 0%, #020C08 100%)', position: 'relative', overflow: 'hidden' }}>
+    <section id="why-us" style={{ padding: '100px 0', background: 'linear-gradient(180deg, rgba(3,19,12,0.44) 0%, rgba(2,12,8,0.50) 100%)', position: 'relative', overflow: 'hidden' }}>
+      <div aria-hidden style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
+        <Image
+          src={janailarFalls}
+          alt=""
+          fill
+          sizes="100vw"
+          style={{ objectFit: 'cover', opacity: 0.4, filter: 'saturate(1.24) contrast(1.12)' }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(135deg, rgba(4,22,14,0.2) 0%, rgba(8,145,178,0.12) 45%, rgba(2,12,8,0.26) 100%)',
+          }}
+        />
+      </div>
+
       {/* Central glow */}
       <div aria-hidden style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '700px', height: '700px', background: 'radial-gradient(circle, rgba(16,185,129,0.05) 0%, transparent 70%)', borderRadius: '50%', pointerEvents: 'none' }} />
 
