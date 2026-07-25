@@ -1,0 +1,122 @@
+[
+  {
+    "id": "pkg-1",
+    "title": "Secrets of Abode of Clouds",
+    "category": "Private Tours",
+    "tagline": "Private bespoke luxury across Cherrapunji, Dawki & Shillong",
+    "duration": "7 Days / 6 Nights",
+    "groupSize": "2 - 6 Guests",
+    "difficulty": "Easy to Moderate",
+    "season": "October to May",
+    "highlights": [
+      "Private boat safari on glass-like Dawki Umngot river",
+      "Sunset high-tea over Laitlum Canyon gorge",
+      "Exclusive trek to Double Decker Living Root Bridges with local guide",
+      "Stargazing luxury eco-resort stay in Cherrapunji"
+    ],
+    "image": "/images/nohkalikai.jpg",
+    "priceEstimate": "From ₹34,999 / person",
+    "featured": true,
+    "description": "An intimate journey designed for couples and private families seeking quiet grandeur, mist-laden valleys, and hidden natural pools with dedicated private 4x4 chauffeur."
+  },
+  {
+    "id": "pkg-2",
+    "title": "Living Root Bridges & Canyons Odyssey",
+    "category": "Offbeat Experiences",
+    "tagline": "Trek through ancient rainforest paths and sacred mossy sanctuaries",
+    "duration": "5 Days / 4 Nights",
+    "groupSize": "Up to 8 Guests",
+    "difficulty": "Moderate",
+    "season": "September to June",
+    "highlights": [
+      "Descend 3,000 steps into Nongriat jungle valley",
+      "Natural pool swimming at Rainbow Falls",
+      "Khasi herbal wellness bath & authentic homecooked feast",
+      "Caving exploration in Mawmluh cave system"
+    ],
+    "image": "/images/rootbridge.jpg",
+    "priceEstimate": "From ₹24,500 / person",
+    "featured": true,
+    "description": "Immerse into ancient botanical engineering where bio-sculpted roots form living footbridges over roaring turquoise rivers."
+  },
+  {
+    "id": "pkg-3",
+    "title": "Crystal Waters & Turquoise Pools",
+    "category": "Weekend Escapes",
+    "tagline": "A refreshing retreat focused on Krang Suri, Dawki & Shnongpdeng",
+    "duration": "4 Days / 3 Nights",
+    "groupSize": "Flexible",
+    "difficulty": "Easy",
+    "season": "November to April",
+    "highlights": [
+      "Cliff diving and kayaking in Shnongpdeng crystal waters",
+      "Camping under clear starry skies by the riverbank",
+      "Krang Suri waterfall natural pool swimming",
+      "Visit Mawlynnong - Asia's cleanest village"
+    ],
+    "image": "/images/dawki.jpg",
+    "priceEstimate": "From ₹18,900 / person",
+    "featured": true,
+    "description": "Escape the city haze into emerald waters so clear that boats appear floating in mid-air. Pure aquatic tranquility."
+  },
+  {
+    "id": "pkg-4",
+    "title": "Khasi Heritage & Sacred Forests",
+    "category": "Community-Based Tourism",
+    "tagline": "Authentic cultural immersion with indigenous Khasi tribal hosts",
+    "duration": "6 Days / 5 Nights",
+    "groupSize": "Small Group (Max 10)",
+    "difficulty": "Easy",
+    "season": "Year Round",
+    "highlights": [
+      "Guided ritual walk in Mawphlang Sacred Grove",
+      "Traditional Khasi pottery and weaving workshops",
+      "Organic farm-to-table cuisine prepared with indigenous herbs",
+      "Storytelling around bonfire with tribal village elders"
+    ],
+    "image": "/images/laitlum.jpg",
+    "priceEstimate": "From ₹22,000 / person",
+    "featured": false,
+    "description": "Walk among 800-year-old sacred trees where law forbids touching a single leaf. Learn centuries of sustainable harmony with nature."
+  },
+  {
+    "id": "pkg-5",
+    "title": "Grand Northeast Monsoon Expedition",
+    "category": "Custom Expeditions",
+    "tagline": "Experience Cherrapunji monsoon waterfalls in their roaring glory",
+    "duration": "8 Days / 7 Nights",
+    "groupSize": "Bespoke",
+    "difficulty": "Moderate",
+    "season": "June to September (Monsoon)",
+    "highlights": [
+      "Nohkalikai & Seven Sisters waterfalls in full thunder",
+      "Chasing rain mist through cloud-capped mountain passes",
+      "Luxury rainforest lodge stay with private balcony views",
+      "Highland tea tasting overlooking mist gorges"
+    ],
+    "image": "/images/hero.jpg",
+    "priceEstimate": "Custom Quote",
+    "featured": true,
+    "description": "For storm-chasers and cloud lovers. Witness Meghalaya transforms into an ethereal realm of 1,000 roaring waterfalls."
+  },
+  {
+    "id": "pkg-6",
+    "title": "Jaintia Hills Offbeat Explorer",
+    "category": "Group Tours",
+    "tagline": "Discover secret caves, monoliths, and hidden azure rivers",
+    "duration": "5 Days / 4 Nights",
+    "groupSize": "Max 12 Guests",
+    "difficulty": "Moderate",
+    "season": "October to April",
+    "highlights": [
+      "Tyrshi Falls and Nartiang Monoliths park",
+      "Speleology trek into Krem Liat Prah cave system",
+      "Phe Phe Falls hidden cascade trail",
+      "Local wine tasting and trout BBQ dinner"
+    ],
+    "image": "/images/krangsuri.jpg",
+    "priceEstimate": "From ₹21,500 / person",
+    "featured": false,
+    "description": "Unravel the less-trodden paths of Jaintia Hills where ancient stone monoliths stand tall beneath swirling mountain fog."
+  }
+]

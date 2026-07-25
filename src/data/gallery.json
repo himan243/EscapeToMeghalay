@@ -1,0 +1,56 @@
+[
+  {
+    "id": "gal-1",
+    "title": "Gliding Over Glass - Dawki",
+    "category": "Rivers",
+    "location": "Umngot River, Dawki",
+    "image": "/images/dawki.jpg",
+    "instagramRef": "@escape_to_meghalaya",
+    "caption": "The pristine waters of Dawki where wooden canoes float suspended between sky and stone."
+  },
+  {
+    "id": "gal-2",
+    "title": "Nohkalikai Thunder Peak",
+    "category": "Waterfalls",
+    "location": "Sohra / Cherrapunji",
+    "image": "/images/nohkalikai.jpg",
+    "instagramRef": "@escape_to_meghalaya",
+    "caption": "India's highest plunge waterfall piercing through swirling rain fog."
+  },
+  {
+    "id": "gal-3",
+    "title": "The Living Roots of Nongriat",
+    "category": "Root Bridges",
+    "location": "Nongriat Valley",
+    "image": "/images/rootbridge.jpg",
+    "instagramRef": "@escape_to_meghalaya",
+    "caption": "Centuries of living bio-engineering woven across wild jungle cascades."
+  },
+  {
+    "id": "gal-4",
+    "title": "End of Hills Horizon",
+    "category": "Canyons",
+    "location": "Laitlum Canyons",
+    "image": "/images/laitlum.jpg",
+    "instagramRef": "@escape_to_meghalaya",
+    "caption": "Rolling emerald hills dissolving into deep mist gorges at sunrise."
+  },
+  {
+    "id": "gal-5",
+    "title": "Krang Suri Azure Mirror",
+    "category": "Waterfalls",
+    "location": "Amlarem, Jaintia Hills",
+    "image": "/images/krangsuri.jpg",
+    "instagramRef": "@escape_to_meghalaya",
+    "caption": "A hidden blue haven tucked inside the ancient forest canopy of Jaintia."
+  },
+  {
+    "id": "gal-6",
+    "title": "Monsoon Clouds Chasing Pines",
+    "category": "Mist & Fog",
+    "location": "Upper Shillong",
+    "image": "/images/hero.jpg",
+    "instagramRef": "@escape_to_meghalaya",
+    "caption": "Floating clouds descending through high pine ridges after morning showers."
+  }
+]

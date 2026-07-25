@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+/* =========================================================
+   DESIGN TOKENS – Escape to Meghalaya
+   ========================================================= */
+@theme {
+  /* Forest Green palette */
+  --color-forest-950: #020C08;
+  --color-forest-900: #061E14;
+  --color-forest-850: #0A271B;
+  --color-forest-800: #0F3827;
+  --color-forest-700: #144F37;
+  --color-forest-600: #1A6849;
+  --color-forest-500: #10B981;
+  --color-forest-400: #34D399;
+  --color-forest-300: #6EE7B7;
+
+  /* Mist/Slate palette */
+  --color-mist-50:  #F8FAFC;
+  --color-mist-100: #F1F5F9;
+  --color-mist-200: #E2E8F0;
+  --color-mist-300: #CBD5E1;
+  --color-mist-400: #94A3B8;
+  --color-mist-500: #64748B;
+  --color-mist-600: #475569;
+  --color-mist-700: #334155;
+  --color-mist-800: #1E293B;
+  --color-mist-900: #0F172A;
+
+  /* Turquoise Water */
+  --color-turquoise-400: #22D3EE;
+  --color-turquoise-500: #06B6D4;
+  --color-turquoise-600: #0891B2;
+
+  /* Warm Earth */
+  --color-earth-100: #FEF3C7;
+  --color-earth-500: #D97706;
+  --color-earth-600: #B45309;
+  --color-earth-700: #9A3412;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+
+  /* Custom animations */
+  --animate-fog-slow: fogMove 25s ease-in-out infinite alternate;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-subtle: pulseSubtle 4s ease-in-out infinite;
+  --animate-marquee-up: marqueeUp 30s linear infinite;
+  --animate-marquee-down: marqueeDown 35s linear infinite;
+
+  @keyframes fogMove {
+    0%   { transform: translateX(-5%) translateY(0%) scale(1.05); opacity: 0.4; }
+    50%  { transform: translateX(5%) translateY(-3%) scale(1.1); opacity: 0.6; }
+    100% { transform: translateX(-2%) translateY(2%) scale(1.05); opacity: 0.4; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+  }
+  @keyframes pulseSubtle {
+    0%, 100% { opacity: 0.8; }
+    50%       { opacity: 0.4; }
+  }
+  @keyframes marqueeUp {
+    0%   { transform: translateY(0%); }
+    100% { transform: translateY(-50%); }
+  }
+  @keyframes marqueeDown {
+    0%   { transform: translateY(-50%); }
+    100% { transform: translateY(0%); }
+  }
+  @keyframes rainDrop {
+    0%   { transform: translateY(-50px) translateX(0px); }
+    100% { transform: translateY(110vh) translateX(-20px); }
+  }
+}
+
+/* =========================================================
+   CSS CUSTOM PROPERTIES – Light / Dark Theme Variables
+   ========================================================= */
+:root {
+  --bg-primary: #F8FAFC;
+  --text-primary: #0F172A;
+  --text-muted: #64748B;
+  --card-bg: rgba(255, 255, 255, 0.48);
+  --card-border: rgba(255, 255, 255, 0.48);
+  --nav-bg: rgba(248, 250, 252, 0.62);
+  --page-glow: radial-gradient(circle at top, rgba(34, 211, 238, 0.16), transparent 32%), radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.12), transparent 28%);
+}
+
+.dark {
+  --bg-primary: #061E14;
+  --text-primary: #F8FAFC;
+  --text-muted: #94A3B8;
+  --card-bg: rgba(10, 39, 27, 0.52);
+  --card-border: rgba(148, 163, 184, 0.18);
+  --nav-bg: rgba(6, 30, 20, 0.64);
+  --page-glow: radial-gradient(circle at top, rgba(8, 145, 178, 0.18), transparent 30%), radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.14), transparent 28%);
+}
+
+/* =========================================================
+   BASE STYLES
+   ========================================================= */
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02","cv03","cv04","cv11";
+}
+
+body {
+  background:
+    var(--page-glow),
+    var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* =========================================================
+   CUSTOM COMPONENT CLASSES
+   ========================================================= */
+
+/* Frosted glass panels */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(24px) saturate(1.25);
+  -webkit-backdrop-filter: blur(24px) saturate(1.25);
+  border: 1px solid var(--card-border);
+}
+
+.glass-nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(28px) saturate(1.25);
+  -webkit-backdrop-filter: blur(28px) saturate(1.25);
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* Hover lift card */
+.glass-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 40px -12px rgba(0,0,0,0.35), 0 0 24px rgba(16,185,129,0.12);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: rgba(6,30,20,0.2); }
+::-webkit-scrollbar-thumb { background: rgba(16,185,129,0.35); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(16,185,129,0.6); }
+
+/* Hide scrollbar helper */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Text gradients */
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #9A3412 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Rain animation for RainParticles component */
+.rain-drop {
+  animation: rainDrop var(--duration, 1.5s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}

@@ -1,0 +1,152 @@
+[
+  {
+    "id": "rev-1",
+    "name": "Dr. Ananya Roy",
+    "role": "Landscape Photographer",
+    "location": "Bengaluru, India",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Private Photography Expedition",
+    "rating": 5,
+    "review": "Standing at Laitlum Canyons at 6 AM with fog rolling beneath our feet was a spiritual experience. Escape to Meghalaya took us to secret viewpoints far away from tourist buses."
+  },
+  {
+    "id": "rev-2",
+    "name": "Marcus & Elena Vance",
+    "role": "Travel Writers",
+    "location": "London, UK",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Secrets of Abode of Clouds",
+    "rating": 5,
+    "review": "The Dawki river boat ride felt completely surreal! Our local guide Bah Wan shared Khasi folktales that made every valley come alive. Flawless luxury execution."
+  },
+  {
+    "id": "rev-3",
+    "name": "Vikramaditya Sharma",
+    "role": "Tech Founder",
+    "location": "Mumbai, India",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Weekend Waterfalls Escape",
+    "rating": 5,
+    "review": "I came stressed from a 70-hour work week and left utterly transformed. Swimming in Krang Suri's blue pool restored my soul. Best travel service I've experienced in Asia."
+  },
+  {
+    "id": "rev-4",
+    "name": "Sophie Dubois",
+    "role": "Botanist & Environmental Researcher",
+    "location": "Lyons, France",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Living Root Bridges & Sacred Forests",
+    "rating": 5,
+    "review": "Fascinating community-based tourism! Seeing how Khasi tribes mold living fig roots across streams without hurting trees inspired my work tremendously."
+  },
+  {
+    "id": "rev-5",
+    "name": "Karan & Tanya Singhania",
+    "role": "Honeymoon Travelers",
+    "location": "Delhi NCR, India",
+    "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Bespoke Luxury Honeymoon",
+    "rating": 5,
+    "review": "Private glamping under the star-lit Cherrapunji sky with warm Khasi meals served by candle light... It exceeded every expectation we had."
+  },
+  {
+    "id": "rev-6",
+    "name": "Rachel Chen",
+    "role": "Creative Director",
+    "location": "Singapore",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Northeast Monsoon Odyssey",
+    "rating": 5,
+    "review": "The monsoon in Cherrapunji is magic. Watching 100 waterfalls roar down green cliffs while staying in a heated glass suite was pure poetry."
+  },
+  {
+    "id": "rev-7",
+    "name": "Aditya Kulkarni",
+    "role": "Architect",
+    "location": "Pune, India",
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Khasi Vernacular Architecture Tour",
+    "rating": 5,
+    "review": "The attention to sustainable travel details, authentic bamboo homestays, and zero single-use plastics blew me away. Truly responsible tourism."
+  },
+  {
+    "id": "rev-8",
+    "name": "Nisha & Siddharth Mehta",
+    "role": "Adventure Enthusiasts",
+    "location": "Ahmedabad, India",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Jaintia Hills Caving & Kayaking",
+    "rating": 5,
+    "review": "Cliff jumping at Shnongpdeng and exploring ancient limestone caves in Jaintia hills gave us the adrenaline rush of a lifetime!"
+  },
+  {
+    "id": "rev-9",
+    "name": "David O'Connor",
+    "role": "Documentary Filmmaker",
+    "location": "Dublin, Ireland",
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Custom Expedition",
+    "rating": 5,
+    "review": "As a filmmaker, logistics are paramount. Escape to Meghalaya handled every permit, local liaison, and terrain challenge effortlessly."
+  },
+  {
+    "id": "rev-10",
+    "name": "Pooja Hegde",
+    "role": "Wellness Coach",
+    "location": "Hyderabad, India",
+    "avatar": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Forest Bathing & Retreat",
+    "rating": 5,
+    "review": "Mawphlang Sacred Grove was the quietest, most peaceful place I have ever stepped into. The team curated mindfulness moments seamlessly."
+  },
+  {
+    "id": "rev-11",
+    "name": "Rohan & Priyamvada",
+    "role": "Corporate Executives",
+    "location": "Gurugram, India",
+    "avatar": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Weekend Escapes",
+    "rating": 5,
+    "review": "From Guwahati airport pickup to our final flight home, everything was smooth as silk. Highly recommended if you want peace of mind."
+  },
+  {
+    "id": "rev-12",
+    "name": "Hannah Lindqvist",
+    "role": "Solo Backpacker",
+    "location": "Stockholm, Sweden",
+    "avatar": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Community-Based Group Tour",
+    "rating": 5,
+    "review": "Felt 100% safe as a solo female traveler. Made lifelong friends and shared tea with village headmen in Mawlynnong."
+  },
+  {
+    "id": "rev-13",
+    "name": "Gautam & Sunita Nair",
+    "role": "Senior Travelers",
+    "location": "Kochi, India",
+    "avatar": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Gentle Comfort Tour",
+    "rating": 5,
+    "review": "They tailored the pace perfectly for senior citizens without compromising on seeing Nohkalikai and Dawki's splendor. Very patient team."
+  },
+  {
+    "id": "rev-14",
+    "name": "Zubair Al-Mansoor",
+    "role": "Luxury Travel Curator",
+    "location": "Dubai, UAE",
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80",
+    "tripType": "VVIP Private Expedition",
+    "rating": 5,
+    "review": "World-class hospitality nestled in raw nature. The team's knowledge of private trails in Meghalaya is unmatched."
+  },
+  {
+    "id": "rev-15",
+    "name": "Rhea Chakraborty",
+    "role": "Content Creator",
+    "location": "Kolkata, India",
+    "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&auto=format&fit=crop&q=80",
+    "tripType": "Instagram Scenic Journey",
+    "rating": 5,
+    "review": "Every spot looked better in real life than on Instagram! Escape to Meghalaya is the real deal."
+  }
+]

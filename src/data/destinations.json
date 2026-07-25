@@ -1,0 +1,68 @@
+[
+  {
+    "id": "dawki",
+    "name": "Dawki River & Shnongpdeng",
+    "tagline": "The Floating River of Crystal Glass",
+    "region": "West Jaintia Hills",
+    "image": "/images/dawki.jpg",
+    "story": "Gliding over the Umngot River in Dawki feels like floating on liquid glass. You can look down 20 feet through turquoise water to see pebbles on the riverbed as if there were no water at all. Wooden canoes drift past limestone cliffs and emerald forests into peaceful silence.",
+    "elevation": "120m",
+    "bestTime": "Nov - Apr",
+    "keyHighlight": "Boats appearing suspended in mid-air above crystal waters"
+  },
+  {
+    "id": "nohkalikai",
+    "name": "Nohkalikai Falls",
+    "tagline": "India's Highest Plunge Waterfall",
+    "region": "Cherrapunji (Sohra)",
+    "image": "/images/nohkalikai.jpg",
+    "story": "Falling 1,115 feet from a precipitous green tableland into a mysterious emerald pool below, Nohkalikai is a spectacle of sheer power and tragic Khasi legend. Watch clouds roll into the gorge, hiding and revealing the thunderous waters in endless dramatic fashion.",
+    "elevation": "1,484m",
+    "bestTime": "Year Round",
+    "keyHighlight": "1,115 ft dramatic waterfall plunging into turquoise plunge pool"
+  },
+  {
+    "id": "rootbridges",
+    "name": "Living Root Bridges",
+    "tagline": "Century-Old Botanical Marvels",
+    "region": "Nongriat & Cherrapunji",
+    "image": "/images/rootbridge.jpg",
+    "story": "Intertwined over decades by Khasi elders using the roots of Ficus elastica trees, these bio-engineered bridges grow stronger with time. The iconic Double Decker Root Bridge in Nongriat spans across roaring jungle streams, draped in moss, ferns, and glowing sunlight.",
+    "elevation": "600m",
+    "bestTime": "Oct - May",
+    "keyHighlight": "Bio-engineered botanical footbridges that grow stronger over centuries"
+  },
+  {
+    "id": "laitlum",
+    "name": "Laitlum Canyons",
+    "tagline": "The Edge of the World",
+    "region": "East Khasi Hills",
+    "image": "/images/laitlum.jpg",
+    "story": "Laitlum translates to 'End of Hills'—and standing on its windswept rim, you feel as though you have reached the edge of the earth. Deep green ravines plummet thousands of feet into winding river valleys while mist drifts dynamically across grassy meadows.",
+    "elevation": "1,750m",
+    "bestTime": "Sep - Jun",
+    "keyHighlight": "Panoramas over endless mist-filled canyons and winding mountain paths"
+  },
+  {
+    "id": "krangsuri",
+    "name": "Krang Suri Falls",
+    "tagline": "The Azure Paradise Waterfall",
+    "region": "Amlarem, Jaintia Hills",
+    "image": "/images/krangsuri.jpg",
+    "story": "Tucked deep within a forest of broadleaf trees, Krang Suri flows like a silky blue curtain into a natural swimming pool of unearthly shade. Wooden footpaths and stone steps lead visitors into a serene sanctuary surrounded by spraying mist and bird calls.",
+    "elevation": "950m",
+    "bestTime": "Oct - Apr",
+    "keyHighlight": "Stunning azure swimming lagoon shrouded in lush forest mist"
+  },
+  {
+    "id": "mawphlang",
+    "name": "Mawphlang Sacred Forest",
+    "tagline": "800-Year-Old Ancient Guardian Grove",
+    "region": "Mawphlang",
+    "image": "/images/hero.jpg",
+    "story": "Protected by ancient Khasi law for over eight centuries, nothing may be removed from this sacred sanctuary—not a fallen leaf or a twig. Stepping into Law Kyntang feels like entering a living museum of ancient orchids, medicinal ferns, and sacred stone monoliths.",
+    "elevation": "1,800m",
+    "bestTime": "Year Round",
+    "keyHighlight": "Untouched ancient forest with rare orchids and Khasi spiritual monoliths"
+  }
+]
