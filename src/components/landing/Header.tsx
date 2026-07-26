@@ -60,13 +60,15 @@ export function Header({ onOpenInquiry }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isWeatherOpen, setIsWeatherOpen] = useState(false);
+  const [weatherRange, setWeatherRange] = useState<'past' | 'future'>('past');
   const [weather, setWeather] = useState<WeatherState>({
     temperature: null,
     weatherCode: null,
     isLoading: true,
     error: false,
   });
-  const [weatherHistory, setWeatherHistory] = useState<WeatherHistoryDay[]>([]);
+  const [pastWeatherHistory, setPastWeatherHistory] = useState<WeatherHistoryDay[]>([]);
+  const [futureWeatherHistory, setFutureWeatherHistory] = useState<WeatherHistoryDay[]>([]);
   const weatherPanelRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -88,7 +90,7 @@ export function Header({ onOpenInquiry }: HeaderProps) {
         const startDate = start.toISOString().slice(0, 10);
         const endDate = today.toISOString().slice(0, 10);
 
-        const [currentResponse, archiveResponse] = await Promise.all([
+        const [currentResponse, archiveResponse, forecastResponse] = await Promise.all([
           fetch(
             `https://api.open-meteo.com/v1/forecast?latitude=${SHILLONG.latitude}&longitude=${SHILLONG.longitude}&current=temperature_2m,weather_code&timezone=auto`,
             { signal: controller.signal }
@@ -97,13 +99,21 @@ export function Header({ onOpenInquiry }: HeaderProps) {
             `https://archive-api.open-meteo.com/v1/archive?latitude=${SHILLONG.latitude}&longitude=${SHILLONG.longitude}&start_date=${startDate}&end_date=${endDate}&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto`,
             { signal: controller.signal }
           ),
+          fetch(
+            `https://api.open-meteo.com/v1/forecast?latitude=${SHILLONG.latitude}&longitude=${SHILLONG.longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min&forecast_days=7&timezone=auto`,
+            { signal: controller.signal }
+          ),
         ]);
 
-        if (!currentResponse.ok || !archiveResponse.ok) throw new Error('Weather request failed');
+        if (!currentResponse.ok || !archiveResponse.ok || !forecastResponse.ok) throw new Error('Weather request failed');
 
-        const [currentData, archiveData] = await Promise.all([currentResponse.json(), archiveResponse.json()]);
+        const [currentData, archiveData, forecastData] = await Promise.all([
+          currentResponse.json(),
+          archiveResponse.json(),
+          forecastResponse.json(),
+        ]);
 
-        const history = Array.isArray(archiveData?.daily?.time)
+        const pastHistory = Array.isArray(archiveData?.daily?.time)
           ? archiveData.daily.time.map((date: string, index: number) => ({
               date,
               label: formatShortDate(date),
@@ -113,7 +123,18 @@ export function Header({ onOpenInquiry }: HeaderProps) {
             }))
           : [];
 
-        setWeatherHistory(history.slice(-7));
+        const futureHistory = Array.isArray(forecastData?.daily?.time)
+          ? forecastData.daily.time.map((date: string, index: number) => ({
+              date,
+              label: formatShortDate(date),
+              max: typeof forecastData?.daily?.temperature_2m_max?.[index] === 'number' ? Math.round(forecastData.daily.temperature_2m_max[index]) : null,
+              min: typeof forecastData?.daily?.temperature_2m_min?.[index] === 'number' ? Math.round(forecastData.daily.temperature_2m_min[index]) : null,
+              weatherCode: typeof forecastData?.daily?.weather_code?.[index] === 'number' ? forecastData.daily.weather_code[index] : null,
+            }))
+          : [];
+
+        setPastWeatherHistory(pastHistory.slice(-7));
+        setFutureWeatherHistory(futureHistory.slice(0, 7));
         setWeather({
           temperature: typeof currentData?.current?.temperature_2m === 'number' ? Math.round(currentData.current.temperature_2m) : null,
           weatherCode: typeof currentData?.current?.weather_code === 'number' ? currentData.current.weather_code : null,
@@ -123,7 +144,8 @@ export function Header({ onOpenInquiry }: HeaderProps) {
       } catch {
         if (!controller.signal.aborted) {
           setWeather({ temperature: null, weatherCode: null, isLoading: false, error: true });
-          setWeatherHistory([]);
+          setPastWeatherHistory([]);
+          setFutureWeatherHistory([]);
         }
       }
     };
@@ -157,6 +179,7 @@ export function Header({ onOpenInquiry }: HeaderProps) {
   const weatherTitle = weather.error
     ? `Unable to load live weather for ${SHILLONG.name}`
     : `${SHILLONG.name} - ${weather.temperature ?? '--'}°C - ${weatherMeta.label}`;
+  const visibleWeatherHistory = weatherRange === 'past' ? pastWeatherHistory : futureWeatherHistory;
 
   const navLinks = [
     { name: 'Home', href: '#hero' },
@@ -312,15 +335,42 @@ export function Header({ onOpenInquiry }: HeaderProps) {
                     </div>
                   </div>
 
+                  <div style={{ padding: '10px 12px 0', display: 'flex', gap: '8px' }}>
+                    {[
+                      { key: 'past' as const, label: 'Previous 7 days' },
+                      { key: 'future' as const, label: 'Next 7 days' },
+                    ].map((option) => (
+                      <button
+                        key={option.key}
+                        type="button"
+                        onClick={() => setWeatherRange(option.key)}
+                        style={{
+                          flex: 1,
+                          padding: '8px 10px',
+                          borderRadius: '9999px',
+                          border: weatherRange === option.key ? '1px solid rgba(16,185,129,0.34)' : '1px solid rgba(71,85,105,0.26)',
+                          background: weatherRange === option.key ? 'rgba(16,185,129,0.12)' : 'rgba(15,23,42,0.24)',
+                          color: weatherRange === option.key ? '#F8FAFC' : 'rgba(203,213,225,0.82)',
+                          fontFamily: 'var(--font-sans)',
+                          fontSize: '11px',
+                          fontWeight: 700,
+                          cursor: 'pointer',
+                        }}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+
                   <div style={{ maxHeight: '240px', overflowY: 'auto', padding: '10px 12px 14px' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                      {weatherHistory.length === 0 && (
+                      {visibleWeatherHistory.length === 0 && (
                         <div style={{ padding: '16px', borderRadius: '14px', background: 'rgba(15,23,42,0.32)', color: 'rgba(203,213,225,0.85)', fontFamily: 'var(--font-sans)', fontSize: '13px' }}>
-                          {weather.error ? 'Weather history is unavailable right now.' : 'Loading 7-day weather history...'}
+                          {weather.error ? 'Weather data is unavailable right now.' : weatherRange === 'past' ? 'Loading previous 7 days...' : 'Loading next 7 days...'}
                         </div>
                       )}
 
-                      {weatherHistory.map((day) => {
+                      {visibleWeatherHistory.map((day) => {
                         const DayIcon = getWeatherMeta(day.weatherCode).icon;
                         return (
                           <div key={day.date} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', borderRadius: '14px', background: 'rgba(15,23,42,0.28)', border: '1px solid rgba(16,185,129,0.08)' }}>
