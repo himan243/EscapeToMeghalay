@@ -17,7 +17,18 @@ export function Gallery() {
     : galleryData.filter(g => g.category.toLowerCase() === activeCategory.toLowerCase());
 
   return (
-    <section id="gallery" style={{ padding: '100px 0', background: '#061E14', position: 'relative', overflow: 'hidden' }}>
+    <section
+      id="gallery"
+      style={{
+        padding: '100px 0',
+        background: 'linear-gradient(180deg, rgba(6,30,20,0.34) 0%, rgba(10,39,27,0.42) 100%)',
+        position: 'relative',
+        overflow: 'hidden',
+        backdropFilter: 'blur(22px) saturate(1.16)',
+        WebkitBackdropFilter: 'blur(22px) saturate(1.16)',
+      }}
+    >
+      <div aria-hidden style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(circle at top left, rgba(16,185,129,0.16) 0%, transparent 34%), radial-gradient(circle at 80% 20%, rgba(8,145,178,0.10) 0%, transparent 30%)' }} />
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 10 }}>
         {/* Header row */}
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '48px', gap: '16px' }}>
@@ -33,7 +44,7 @@ export function Gallery() {
             href="https://www.instagram.com/escape_to_meghalaya"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 18px', borderRadius: '9999px', border: '1px solid rgba(16,185,129,0.3)', background: 'rgba(10,39,27,0.5)', backdropFilter: 'blur(12px)', color: '#6EE7B7', fontSize: '12px', fontFamily: 'var(--font-sans)', textDecoration: 'none', transition: 'all 0.2s' }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 18px', borderRadius: '9999px', border: '1px solid rgba(16,185,129,0.14)', background: 'rgba(10,39,27,0.34)', backdropFilter: 'blur(14px) saturate(1.12)', WebkitBackdropFilter: 'blur(14px) saturate(1.12)', color: '#6EE7B7', fontSize: '12px', fontFamily: 'var(--font-sans)', textDecoration: 'none', transition: 'all 0.2s' }}
           >
             <Camera size={14} style={{ color: '#10B981' }} />
             <span>@escape_to_meghalaya</span>
@@ -46,7 +57,7 @@ export function Gallery() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              style={{ padding: '8px 18px', borderRadius: '9999px', whiteSpace: 'nowrap', fontSize: '12px', fontFamily: 'var(--font-sans)', fontWeight: 500, cursor: 'pointer', border: activeCategory === cat ? '1px solid rgba(16,185,129,0.6)' : '1px solid rgba(71,85,105,0.4)', background: activeCategory === cat ? 'rgba(5,150,105,0.75)' : 'rgba(15,23,42,0.4)', backdropFilter: 'blur(12px)', color: activeCategory === cat ? '#FFF' : 'rgba(203,213,225,0.8)', transition: 'all 0.25s' }}
+              style={{ padding: '8px 18px', borderRadius: '9999px', whiteSpace: 'nowrap', fontSize: '12px', fontFamily: 'var(--font-sans)', fontWeight: 500, cursor: 'pointer', border: activeCategory === cat ? '1px solid rgba(16,185,129,0.45)' : '1px solid rgba(71,85,105,0.28)', background: activeCategory === cat ? 'rgba(5,150,105,0.62)' : 'rgba(15,23,42,0.28)', backdropFilter: 'blur(14px) saturate(1.12)', WebkitBackdropFilter: 'blur(14px) saturate(1.12)', color: activeCategory === cat ? '#FFF' : 'rgba(203,213,225,0.8)', transition: 'all 0.25s' }}
             >
               {cat}
             </button>
@@ -64,11 +75,12 @@ export function Gallery() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
               onClick={() => setLightboxImg(item)}
-              style={{ position: 'relative', height: '320px', borderRadius: '20px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(20,79,55,0.4)', boxShadow: '0 8px 32px rgba(0,0,0,0.3)' }}
+              style={{ position: 'relative', height: '320px', borderRadius: '20px', overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(16,185,129,0.14)', boxShadow: '0 8px 28px rgba(0,0,0,0.22)', background: 'rgba(10,39,27,0.24)', backdropFilter: 'blur(18px) saturate(1.12)', WebkitBackdropFilter: 'blur(18px) saturate(1.12)' }}
               whileHover={{ scale: 1.02 }}
             >
               <Image src={item.image} alt={item.title} fill style={{ objectFit: 'cover', transition: 'transform 0.7s ease' }} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(2,12,8,0.9) 0%, transparent 60%)', opacity: 0.85, transition: 'opacity 0.3s' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(2,12,8,0.82) 0%, transparent 60%)', opacity: 0.8, transition: 'opacity 0.3s' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(16,185,129,0.10) 0%, rgba(8,145,178,0.06) 50%, rgba(2,12,8,0.14) 100%)' }} />
 
               {/* Zoom icon */}
               <div style={{ position: 'absolute', top: 14, right: 14, padding: '8px', borderRadius: '10px', background: 'rgba(6,30,20,0.7)', backdropFilter: 'blur(8px)', border: '1px solid rgba(16,185,129,0.3)', color: '#10B981', display: 'flex' }}>
@@ -92,7 +104,7 @@ export function Gallery() {
       <AnimatePresence>
         {lightboxImg && (
           <div
-            style={{ position: 'fixed', inset: 0, zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px', background: 'rgba(2,12,8,0.92)', backdropFilter: 'blur(20px)' }}
+              style={{ position: 'fixed', inset: 0, zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px', background: 'rgba(2,12,8,0.82)', backdropFilter: 'blur(18px)' }}
             onClick={() => setLightboxImg(null)}
           >
             <motion.div
@@ -100,7 +112,7 @@ export function Gallery() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               onClick={e => e.stopPropagation()}
-              style={{ background: 'rgba(10,39,27,0.95)', border: '1px solid rgba(20,79,55,0.5)', borderRadius: '24px', overflow: 'hidden', maxWidth: '900px', width: '100%', boxShadow: '0 48px 96px rgba(0,0,0,0.7)' }}
+              style={{ background: 'rgba(10,39,27,0.42)', backdropFilter: 'blur(22px) saturate(1.12)', WebkitBackdropFilter: 'blur(22px) saturate(1.12)', border: '1px solid rgba(16,185,129,0.14)', borderRadius: '24px', overflow: 'hidden', maxWidth: '900px', width: '100%', boxShadow: '0 48px 96px rgba(0,0,0,0.52)' }}
             >
               <div style={{ position: 'relative', height: '60vh', width: '100%' }}>
                 <Image src={lightboxImg.image} alt={lightboxImg.title} fill style={{ objectFit: 'contain' }} />
@@ -108,7 +120,7 @@ export function Gallery() {
                   <X size={20} />
                 </button>
               </div>
-              <div style={{ padding: '24px 28px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', gap: '12px', background: 'rgba(6,30,20,0.95)' }}>
+              <div style={{ padding: '24px 28px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', gap: '12px', background: 'rgba(6,30,20,0.42)', borderTop: '1px solid rgba(16,185,129,0.10)' }}>
                 <div>
                   <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '24px', color: '#F1F5F9', fontWeight: 400, marginBottom: '6px' }}>{lightboxImg.title}</h3>
                   <p style={{ color: 'rgba(148,163,184,0.8)', fontFamily: 'var(--font-sans)', fontSize: '14px' }}>{lightboxImg.caption}</p>

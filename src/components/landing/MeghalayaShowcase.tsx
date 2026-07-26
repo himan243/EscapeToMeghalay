@@ -11,7 +11,9 @@ const S = {
     padding: '100px 0',
     position: 'relative' as const,
     overflow: 'hidden',
-    background: 'linear-gradient(180deg, #02100A 0%, #061E14 100%)',
+    background: 'linear-gradient(180deg, rgba(6,30,20,0.34) 0%, rgba(10,39,27,0.42) 100%)',
+    backdropFilter: 'blur(24px) saturate(1.18)',
+    WebkitBackdropFilter: 'blur(24px) saturate(1.18)',
   },
   glow1: {
     position: 'absolute' as const,
@@ -82,12 +84,13 @@ const S = {
     display: 'grid',
     gridTemplateColumns: '1fr',
     gap: '32px',
-    background: 'rgba(10,39,27,0.5)',
-    backdropFilter: 'blur(20px)',
-    border: '1px solid rgba(20,79,55,0.45)',
+    background: 'rgba(10,39,27,0.34)',
+    backdropFilter: 'blur(26px) saturate(1.18)',
+    WebkitBackdropFilter: 'blur(26px) saturate(1.18)',
+    border: '1px solid rgba(16,185,129,0.14)',
     borderRadius: '28px',
     padding: '28px',
-    boxShadow: '0 32px 64px rgba(0,0,0,0.4)',
+    boxShadow: '0 32px 64px rgba(0,0,0,0.26)',
   },
   imgWrap: {
     position: 'relative' as const,
@@ -165,14 +168,16 @@ export function MeghalayaShowcase({ onSelectDestination }: MeghalayaShowcaseProp
                   style={{ objectFit: 'cover', transition: 'transform 0.7s ease' }}
                 />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(2,12,8,0.85) 0%, transparent 55%)' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(16,185,129,0.12) 0%, rgba(8,145,178,0.06) 52%, rgba(2,12,8,0.18) 100%)' }} />
 
                 {/* Region badge */}
                 <div style={{
                   position: 'absolute', top: 16, left: 16,
                   display: 'inline-flex', alignItems: 'center', gap: 6,
                   padding: '6px 14px', borderRadius: '9999px',
-                  background: 'rgba(6,30,20,0.75)', backdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(16,185,129,0.3)',
+                  background: 'rgba(6,30,20,0.42)', backdropFilter: 'blur(14px) saturate(1.15)',
+                  WebkitBackdropFilter: 'blur(14px) saturate(1.15)',
+                  border: '1px solid rgba(16,185,129,0.16)',
                   color: '#6EE7B7', fontSize: '11px', fontFamily: 'var(--font-sans)',
                 }}>
                   <MapPin size={12} style={{ color: '#10B981' }} />
